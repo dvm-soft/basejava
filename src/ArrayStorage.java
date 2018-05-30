@@ -17,16 +17,25 @@ public class ArrayStorage {
     }
 
     void save(Resume r) {
-        if (r == null)
-            return;
-        for (int i = 0; i < size; i++)
-            if (storage[i].uuid.equals(r.uuid)) {
-                storage[i] = r;
-                return;
-            }
-        storage[size] = r;
-        size++;
+        if (!update(r)) {
+            storage[size] = r;
+            size++;
+        }
+
    }
+
+   boolean update(Resume r) {
+        if (r == null)
+            return false;
+       for (int i = 0; i < size; i++) {
+           if (storage[i].uuid.equals(r.uuid)) {
+               storage[i] = r;
+               return true;
+           }
+       }
+       return false;
+   }
+
 
     Resume get(String uuid) {
         for (int j = 0; j < size; j++)
