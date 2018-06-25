@@ -17,48 +17,57 @@ public class ArrayStorage {
     }
 
     void save(Resume r) {
-        if (r == null)
+        int index = getIndex(r.uuid);
+        if (index != -1) {
+            storage[index] = r;
             return;
-        if (!update(r))
-            if (storage.length == size)
-                System.out.println("Resume did not saved! Overflow.");
-            else {
-                storage[size] = r;
-                size++;
-                return;
-            }
+        }
+        if (storage.length == size) {
+            System.out.println("Resume did not saved! Overflow.");
+            return;
+        }
+        storage[size] = r;
+        size++;
+        return;
    }
 
-   boolean update(Resume r) {
-       if (r == null)
-           return false;
-       for (int i = 0; i < size; i++)
-           if (storage[i].uuid.equals(r.uuid)) {
-               storage[i] = r;
-               return true;
-           }
-       return false;
+   void update(Resume r) {
+       int index = getIndex(r.uuid);
+       if (index == -1) {
+           System.out.println("Resume not found.");
+           return;
+       }
+       storage[index] = r;
+       return;
    }
 
     Resume get(String uuid) {
-        for (int j = 0; j < size; j++)
-            if (storage[j].uuid.equals(uuid))
-                return storage[j];
-        System.out.println("Resume not found.");
-        return null;
+        int index = getIndex(uuid);
+        if (index == -1) {
+            System.out.println("Resume not found.");
+            return null;
+        }
+        return storage[index];
     }
 
     void delete(String uuid) {
-        for (int i = 0; i < size; i++)
-            if (storage[i].uuid.equals(uuid)) {
-                System.arraycopy(storage, i + 1, storage, i, size - i - 1);
-                size--;
-                return;
-            }
-        System.out.println("Resume not found.");
+        int index = getIndex(uuid);
+        if (index == -1) {
+            System.out.println("Resume not found.");
+            return;
+        }
+        storage[index] = storage[size - 1];
+        storage[size - 1] = null;
+        size--;
         return;
     }
 
+    private int getIndex(String uuid) {
+        for (int i = 0; i < size; i++)
+            if (storage[i].uuid.equals(uuid))
+                return i;
+        return -1;
+    }
 
     /**
      * @return array, contains only Resumes in storage (without null)
