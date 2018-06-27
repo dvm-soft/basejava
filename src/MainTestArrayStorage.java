@@ -1,5 +1,9 @@
+import model.Resume;
+import storage.ArrayStorage;
+import storage.Storage;
+
 /**
- * Test ru.javawebinar.basejava.storage.ArrayStorage
+ * Test ru.javawebinar.basejava.storage.storage.ArrayStorage
  */
 public class MainTestArrayStorage {
     private static final Storage ARRAY_STORAGE = new ArrayStorage();
