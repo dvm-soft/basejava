@@ -3,7 +3,7 @@ import storage.ArrayStorage;
 import storage.Storage;
 
 /**
- * Test ru.javawebinar.basejava.storage.storage.ArrayStorage
+ * Test ru.javawebinar.basejava.storage.storage.AbstractArrayStorage
  */
 public class MainTestArrayStorage {
     private static final Storage ARRAY_STORAGE = new ArrayStorage();

@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Test for ru.javawebinar.basejava.storage.storage.ArrayStorage
+ * Test for ru.javawebinar.basejava.storage.storage.AbstractArrayStorage
  */
 public class MainArray {
     private final static Storage ARRAY_STORAGE = new ArrayStorage();
