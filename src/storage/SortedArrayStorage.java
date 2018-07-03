@@ -24,8 +24,8 @@ public class SortedArrayStorage extends AbstractArrayStorage{
 
     @Override
     protected void fillDeletedElemet(int index) {
-        int sizeMove = size - index - 1;
-        if (sizeMove > 0)
-            System.arraycopy(storage, index + 1, storage, index, sizeMove);
+        int numMoved = size - index - 1;
+        if (numMoved > 0)
+            System.arraycopy(storage, index + 1, storage, index, numMoved);
     }
 }
