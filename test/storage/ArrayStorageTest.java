@@ -10,15 +10,4 @@ public class ArrayStorageTest extends AbstractArrayStorageTest {
         super(new ArrayStorage());
     }
 
-    @Test
-    public void getIndex() {
-    }
-
-    @Test
-    public void insertElement() {
-    }
-
-    @Test
-    public void fillDeletedElemet() {
-    }
 }

@@ -8,14 +8,21 @@
 
 package storage;
 
+import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.categories.Categories;
 
 import static org.junit.Assert.*;
 
-public class SortedArrayStorageTest extends AbstractArrayStorageTest{
+public class ListStorageTest extends AbstractArrayStorageTest {
 
-    public SortedArrayStorageTest() {
-        super(new SortedArrayStorage());
+    public ListStorageTest() {
+        super(new ListStorage());
     }
+
+    @Test
+    @Categories.ExcludeCategory(AbstractArrayStorageTest.class)
+    public void saveOverflow(){};
 
 }
