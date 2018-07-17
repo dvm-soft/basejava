@@ -17,27 +17,37 @@ public class MapStorage extends AbstractStorage {
     Map<String, Resume> storage = new HashMap<String, Resume>();
 
     @Override
-    public void clear() {
+    protected void doUpdate(Resume r, Object searchKey) {
 
     }
 
     @Override
-    public void update(Resume r) {
+    protected void doSave(Resume r, Object searchKey) {
 
     }
 
     @Override
-    public void save(Resume r) {
+    protected void doDelete(Object searchKey) {
 
     }
 
     @Override
-    public Resume get(String uuid) {
+    protected Resume doGet(Object searchKey) {
         return null;
     }
 
     @Override
-    public void delete(String uuid) {
+    protected boolean isExist(Object searchKey) {
+        return false;
+    }
+
+    @Override
+    protected Object getSearchKey(String uuid) {
+        return null;
+    }
+
+    @Override
+    public void clear() {
 
     }
 
