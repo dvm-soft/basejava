@@ -6,16 +6,14 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package storage;
-
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
-public class SortedArrayStorageTest extends AbstractArrayStorageTest{
-
-    public SortedArrayStorageTest() {
-        super(new SortedArrayStorage());
+public class MainUtil {
+    public static void main(String[] args) {
+        System.out.println(Integer.valueOf(-1) == Integer.valueOf(-1));
+        System.out.println(Integer.valueOf(-1) == new Integer(-1));
+        int result = getInt();
+        System.out.println(result);
     }
-
+    private static Integer getInt(){
+        return -1;
+    }
 }

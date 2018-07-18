@@ -12,7 +12,7 @@ import org.junit.experimental.categories.Category;
 
 import static org.junit.Assert.*;
 
-public abstract class AbstractArrayStorageTest {
+public abstract class AbstractStorageTest {
     private Storage storage;
 
     private static final String UUID_1 = "uuid1";
@@ -34,7 +34,7 @@ public abstract class AbstractArrayStorageTest {
     }
 
 
-    protected AbstractArrayStorageTest(Storage storage) {
+    protected AbstractStorageTest(Storage storage) {
         this.storage = storage;
     }
 
@@ -76,9 +76,6 @@ public abstract class AbstractArrayStorageTest {
         assertEquals(RESUME_1, array[0]);
         assertEquals(RESUME_2, array[1]);
         assertEquals(RESUME_3, array[2]);
-        System.out.println(array[0]);
-        System.out.println(array[1]);
-        System.out.println(array[2]);
     }
 
     @Test

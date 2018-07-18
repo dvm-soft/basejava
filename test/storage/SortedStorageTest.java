@@ -8,17 +8,10 @@
 
 package storage;
 
-import org.junit.Test;
-import org.junit.experimental.categories.Categories;
+public class SortedStorageTest extends AbstractStorageTest {
 
-public class ListStorageTest extends AbstractStorageTest {
-
-    public ListStorageTest() {
-        super(new ListStorage());
+    public SortedStorageTest() {
+        super(new SortedArrayStorage());
     }
-
-    @Test
-    @Categories.ExcludeCategory(AbstractStorageTest.class)
-    public void saveOverflow(){};
 
 }
