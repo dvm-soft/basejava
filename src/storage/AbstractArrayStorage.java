@@ -5,7 +5,11 @@ import exception.NotExistStorageException;
 import exception.StorageException;
 import model.Resume;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Array based storage for Resumes
@@ -59,8 +63,10 @@ public abstract class AbstractArrayStorage extends AbstractStorage {
         return (Integer) index >= 0;
     }
 
-    public Resume[] getAll() {
-        return Arrays.copyOfRange(storage, 0, size);
+    @Override
+    public List<Resume> doCopyAll() {
+        List<Resume> list = Arrays.asList(Arrays.copyOfRange(storage, 0, size()));
+        return list;
     }
 
     protected abstract Integer getSearchKey(String uuid);

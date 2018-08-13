@@ -8,12 +8,10 @@
 
 package storage;
 
-import org.junit.Test;
-import org.junit.experimental.categories.Categories;
 
-public class ListStorageTest extends AbstractStorageTest {
+public class MapUuidStorageTest extends AbstractStorageTest {
 
-    public ListStorageTest() {
-        super(new ListStorage());
+    public MapUuidStorageTest() {
+        super(new MapUuidStorage());
     }
 }

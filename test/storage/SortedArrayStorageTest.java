@@ -8,12 +8,10 @@
 
 package storage;
 
-import org.junit.Test;
-import org.junit.experimental.categories.Categories;
+public class SortedArrayStorageTest extends AbstractArrayStorageTest {
 
-public class ListStorageTest extends AbstractStorageTest {
-
-    public ListStorageTest() {
-        super(new ListStorage());
+    public SortedArrayStorageTest() {
+        super(new SortedArrayStorage());
     }
+
 }

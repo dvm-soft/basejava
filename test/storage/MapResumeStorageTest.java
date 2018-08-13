@@ -8,10 +8,10 @@
 
 package storage;
 
-public class SortedStorageTest extends AbstractStorageTest {
 
-    public SortedStorageTest() {
-        super(new SortedArrayStorage());
+public class MapResumeStorageTest extends AbstractStorageTest {
+
+    public MapResumeStorageTest() {
+        super(new MapResumeStorage());
     }
-
 }
