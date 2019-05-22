@@ -39,6 +39,7 @@ public class Resume implements Comparable<Resume>{
 
         if (!uuid.equals(resume.uuid)) return false;
         return fullName.equals(resume.fullName);
+
     }
 
     @Override
