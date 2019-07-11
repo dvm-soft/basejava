@@ -1,11 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * ru.javawebinar.basejava.model.model.Resume class
  */
-public class Resume implements Comparable<Resume> {
+public class Resume implements Comparable<Resume>, Serializable {
     // Unique identifier
     private final String uuid;
     private final String fullName;
