@@ -8,10 +8,12 @@
 
 package storage;
 
-public class FileStorageTest extends AbstractStorageTest {
+import storage.serializer.ObjectStreamSerializer;
+
+public class ObjectFileStorageTest extends AbstractStorageTest {
 
 
-    public FileStorageTest() {
-        super(new FileStorage(STORAGE_DIR, new ObjectStreamStrategy()));
+    public ObjectFileStorageTest() {
+        super(new FileStorage(STORAGE_DIR, new ObjectStreamSerializer()));
     }
 }

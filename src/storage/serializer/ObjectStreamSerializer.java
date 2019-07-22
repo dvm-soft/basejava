@@ -1,10 +1,10 @@
-package storage;
+package storage.serializer;
 
+import exception.StorageException;
 import model.Resume;
-
 import java.io.*;
 
-public class ObjectStreamStrategy implements Strategy {
+public class ObjectStreamSerializer implements StreamSerializer {
 
     @Override
     public void doWrite(Resume r, OutputStream os) throws IOException {
@@ -15,12 +15,10 @@ public class ObjectStreamStrategy implements Strategy {
 
     @Override
     public Resume doRead(InputStream is) throws IOException {
-        Resume resume = null;
         try (ObjectInputStream ois = new ObjectInputStream(is)) {
-            resume = (Resume) ois.readObject();
+            return (Resume) ois.readObject();
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            throw  new StorageException("Error read resume", null, e);
         }
-        return resume;
     }
 }

@@ -8,10 +8,12 @@
 
 package storage;
 
-public class PathStorageTest extends AbstractStorageTest {
+import storage.serializer.ObjectStreamSerializer;
+
+public class ObjectPathStorageTest extends AbstractStorageTest {
 
 
-    public PathStorageTest() {
-        super(new PathStorage(STORAGE_DIR.getAbsolutePath(), new ObjectStreamStrategy()));
+    public ObjectPathStorageTest() {
+        super(new PathStorage(STORAGE_DIR.getAbsolutePath(), new ObjectStreamSerializer()));
     }
 }
