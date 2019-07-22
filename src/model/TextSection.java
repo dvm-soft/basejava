@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class TextSection extends Section implements Serializable {
+    private static final long serialVersionUID = -7046801459096814955L;
     private final String content;
 
     public TextSection(String content) {

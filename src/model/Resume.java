@@ -7,6 +7,7 @@ import java.util.*;
  * ru.javawebinar.basejava.model.model.Resume class
  */
 public class Resume implements Comparable<Resume>, Serializable {
+    private static final long serialVersionUID = -1554550798983648167L;
     // Unique identifier
     private final String uuid;
     private final String fullName;

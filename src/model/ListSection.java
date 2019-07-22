@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class ListSection extends Section implements Serializable {
+    private static final long serialVersionUID = 3002069071657843815L;
     private final List<String> items;
 
     public ListSection(List<String> items) {

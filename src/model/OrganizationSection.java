@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class OrganizationSection extends Section implements Serializable {
+    private static final long serialVersionUID = 3680740326773892818L;
     private final List<Organization> organizations;
 
     public OrganizationSection(List<Organization> organizations) {
