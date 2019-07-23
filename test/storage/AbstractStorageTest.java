@@ -62,12 +62,8 @@ public abstract class AbstractStorageTest {
                                 new Organization.Position(2015, Month.JANUARY, "position1", "content1"))));
     }
 
-
     protected AbstractStorageTest(Storage storage) {
         this.storage = storage;
-    }
-
-    protected AbstractStorageTest() {
     }
 
     @Before
@@ -93,7 +89,7 @@ public abstract class AbstractStorageTest {
     public void update() throws Exception {
         Resume newResume = new Resume(UUID_1, "New Name");
         storage.update(newResume);
-        assertTrue(newResume.equals(storage.get(UUID_1)));
+        assertEquals(newResume, storage.get(UUID_1));
     }
 
     @Test(expected = NotExistStorageException.class)

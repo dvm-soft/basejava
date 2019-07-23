@@ -7,11 +7,14 @@ import java.util.Objects;
 
 public class ListSection extends Section implements Serializable {
     private static final long serialVersionUID = 3002069071657843815L;
-    private final List<String> items;
+    private List<String> items;
 
     public ListSection(List<String> items) {
         Objects.requireNonNull(items, "items must not be null");
         this.items = items;
+    }
+
+    public ListSection() {
     }
 
     public ListSection(String... strings) {
