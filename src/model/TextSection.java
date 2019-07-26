@@ -10,6 +10,10 @@ public class TextSection extends Section implements Serializable {
     public TextSection() {
     }
 
+    public String getContent() {
+        return content;
+    }
+
     public TextSection(String content) {
         Objects.requireNonNull(content, "content must not be null");
         this.content = content;
