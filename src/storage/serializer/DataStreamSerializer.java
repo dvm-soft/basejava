@@ -80,7 +80,8 @@ public class DataStreamSerializer implements StreamSerializer {
             }
             size = dis.readInt();
             for (int i = 0; i < size; i++) {
-                switch (dis.readUTF()) {
+                String sectionType = dis.readUTF();
+                switch (sectionType) {
                     case "TextSection":
                         readTextSection(dis, resume);
                         break;
@@ -91,10 +92,7 @@ public class DataStreamSerializer implements StreamSerializer {
                         readOrganizationSection(dis, resume);
                         break;
                 }
-                String sectionType = dis.readUTF();
-
             }
-
             return resume;
         }
     }
